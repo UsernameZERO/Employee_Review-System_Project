@@ -128,7 +128,7 @@ module.exports.realAdmin = async function(req,res){
         
     } catch (error) {
         console.log(error);
-        return res.end('<h1>server end error please try again</h1>');
+        return res.end('<h1>Credentials are given plz check in database , return to home page</h1>');
     }
 
 }
