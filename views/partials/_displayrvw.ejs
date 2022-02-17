@@ -1,0 +1,66 @@
+<div class="displayRvw">
+  <!-- <h2>Reviews</h2> -->
+  <ul>
+    <%for(performance of performances){%> <%if(profile_user.id ==
+    performance.rvwFor){%> <%if(user.usersPower === 'admin'){%>
+
+    <div class="box-editperf">
+      <p id="perfgiven">
+        Performance is given by [
+        <span style="color: #3daefa"><%= performance.rvwBYuser.name%></span> ]
+        <span id="rmvperf"
+          ><a href="/performance/destroy/<%= performance.id%>"
+            >[Remove]</a
+          ></span
+        >
+      </p>
+      <form
+        id="updatePerf"
+        action="/performance/update/<%=performance.id%>"
+        method="post"
+      >
+        <label for="review_No">Review (?/5) :</label>
+        <input
+          type="number"
+          id="review_No"
+          name="review"
+          min="1"
+          max="5"
+          value="<%= performance.review%>"
+          required
+        />
+        <label for="feed_back">What is the review for ? </label>
+        <input
+          type="text"
+          name="description"
+          id="feed_back"
+          value="<%=performance.description%>"
+          required
+        />
+        <input type="hidden" name="rvwBYuser" value="<%= user._id %>" />
+        <input type="hidden" name="rvwfor" value="<%= profile_user.id%>" />
+        <button id="updatePerf" type="submit">EDIT</button>
+      </form>
+    </div>
+
+    <small> <%- include('./_feedback')%></small>
+    <%}else{%>
+    <div id="perfrvw-box">
+      <!-- <p>   -->
+      <p id="profileName">Reviews of <%= profile_user.name%></p>
+      <ul>
+        <li>Rating: <%= performance.review%>/5</li>
+        <li>Review: <%= performance.description%></li>
+      </ul>
+      <p id="rvwUser">
+        -
+        <small> <%= performance.rvwBYuser.name%> </small>
+        -
+      </p>
+      <small> <%- include('./_feedback')%></small>
+      <!-- </p> -->
+    </div>
+
+    <%}%> <%}%> <%}%>
+  </ul>
+</div>

@@ -1,0 +1,23 @@
+.showfdbk{
+    ul{
+        #fdbkrvw{
+            p{
+                text-transform: uppercase;
+                color: rgb(48, 121, 48);
+                small{
+                    a{
+                        padding-left: 2px;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            #reply{
+                color: rgba(109, 109, 218, 0.671);
+                text-transform: capitalize;
+                margin-bottom: 5px;
+                
+            }
+        }
+    }
+}

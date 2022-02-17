@@ -1,0 +1,71 @@
+<div class="feedbacksforperf">
+  <%if(profile_user.id == user.id || user.usersPower === 'admin'){%>
+  <form id="fdbkForm" action="/feedback/create" method="post">
+    <textarea
+      name="feedback"
+      id="feed_back1"
+      cols="20"
+      rows="3"
+      placeholder="Add your reply to the performance"
+      required
+    ></textarea>
+    <input type="hidden" name="fdbkBYuser" value="<%=profile_user.id%>" />
+    <input type="hidden" name="userPerformance" value="<%= performance._id%>" />
+    <input id="btn-reply" type="submit" value="send" />
+  </form>
+  <%}%>
+
+  <div class="showfdbk">
+    <ul id="perfid<%= performance._id%>">
+      <% for(feed of performance.feedbacks){%>
+      <div id="editRevww">
+        <%if(user.usersPower === 'admin'){%>
+        <p id="prf">
+          <%=profile_user.name%>
+          <span id="remv"
+            ><a href="/feedback/destroy/<%= feed.id%>">[ remove ]</a></span
+          >
+        </p>
+
+        <form
+          id="updatervws"
+          action="/feedback/update/<%= feed.id %>"
+          method="post"
+        >
+          <label>Reply : </label>
+          <input
+            type="text"
+            name="feedback"
+            id="feed_back1"
+            value="<%= feed.feedback%>"
+            required
+          />
+          <input type="hidden" name="fdbkBYuser" value="<%=profile_user.id%>" />
+          <input
+            type="hidden"
+            name="userPerformance"
+            value="<%= performance._id%>"
+          />
+          <input id="btn-editrvw" type="submit" value="Edit" />
+        </form>
+      </div>
+
+      <%}else{%>
+      <div class="showrvw">
+        <p id="feed"><%= feed.feedback%></p>
+        <p id="rplyuser">- <%= profile_user.name%> -</p>
+        <small
+          ><p id="nothing"><%= feed.userPerformance.rvwBYuser.name%></p></small
+        >
+      </div>
+
+      <!-- <small><p><%= feed.userPerformance.rvwBYuser%></p></small>
+      <p>check id <%=feed.userPerformance.rvwBYuser%></p> -->
+
+      <!-- <small
+        ><p id="nothing"><%= feed.userPerformance.rvwBYuser.name%></p></small
+      > -->
+      <%}%> <%}%>
+    </ul>
+  </div>
+</div>

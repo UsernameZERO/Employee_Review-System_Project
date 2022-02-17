@@ -1,0 +1,51 @@
+#intro{
+    h1{
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: 'Audiowide', cursive;
+        color: rgb(243, 238, 237);
+        word-spacing: 4px;
+        letter-spacing: 6px;
+    }
+    p{
+        font-size: 1.4rem;
+        font-family: 'Rampart One', cursive;
+        word-spacing: 4px;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+        color: rgb(50, 113, 116);
+    }
+}
+p#prof{
+    text-align: center;
+    font-family: 'Coda', cursive;
+    color: salmon;
+    box-shadow: 1px 1px 4px rgb(248, 245, 245);
+    width: 15rem;
+    margin-left: 42%;
+    font-size: 1.3rem;
+    
+}
+#otherprofiles{
+    margin: auto;
+    height: 10vh;
+    width: 20rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    text-align: center;
+    background-color: rgb(8, 8, 8);
+    a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: aliceblue;
+        font-family: 'Ruslan Display', cursive;
+    }
+    a:hover{
+        color: red;
+        box-shadow: 3px 3px 6px rgb(83, 22, 15);
+    }
+}

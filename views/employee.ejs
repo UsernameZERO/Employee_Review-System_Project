@@ -1,0 +1,18 @@
+<div id="intro">
+  <h1>Welcome To The Employee Dashborad --- <%= user.name%></h1>
+  <p>You can give feedbacks to the performance given by your collegues.</p>
+  <p>To view your performance you can go to profile.</p>
+  <p>You can give performance to your collegues.</p>
+</div>
+<p id="prof">Employee Profiless</p>
+<div id="otherprofiles">
+  <% for(u of all_users){%>
+  <p>
+    <%if(u.usersPower === 'admin'){%>
+    <a href="/employee/profile/<%=u.id%>"><%= u.name%> [Admin]</a>
+    <%}else{%>
+    <a href="/employee/profile/<%=u.id%>"><%= u.name%></a>
+    <%}%>
+  </p>
+  <%}%>
+</div>

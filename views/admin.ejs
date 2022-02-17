@@ -1,0 +1,42 @@
+<div id="adminDIV">
+  <h1 id="admdash">ADMIN DASHBOARD</h1>
+  <h3 id="rgst"> Register An Employee</h3>
+    <!-- to register an employee -->
+    <%- include('./partials/_addEmployee')%>
+  
+    <!-- lists of employee -->
+    <%- include('./partials/EmpList(admin)')%>
+  
+    <!-- <div class="perfForm">
+    <form id="perf_form" action="/performance/create" method="post">
+      <label for="review_No">Review(?/5)</label>
+      <input
+        type="number"
+        id="review_No"
+        name="review"
+        min="1"
+        max="5"
+        required
+      />
+      <label for="feed_back">What is the review for ? </label>
+      <textarea
+        name="description"
+        id="feed_back"
+        cols="30"
+        rows="3"
+        required
+      ></textarea>
+      <input type="hidden" name="rvwBYuser" value="<%= user._id %>" />
+      <button type="submit">ADD</button>
+    </form>
+  </div> -->
+  
+    <!-- Reviews displaying -->
+    <div id="perf-rvw">
+      <h3 id="rvws">Reviews</h3>
+      <%- include('./partials/displayPerf(admin)')%>
+    </div>
+    <script src="/js/script.js"></script>
+  </h3>
+
+</div>

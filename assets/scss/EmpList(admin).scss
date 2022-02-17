@@ -1,0 +1,36 @@
+.listEmps{
+    margin-top: 1rem;
+    border: 2px solid rgba(0, 0, 2, 0.65);
+    box-shadow: 1px 1px 15px black;
+    width: 30rem;
+    margin-left: 3%;
+    h2{
+        font-size: 1.5rem;
+        border-bottom: 4px solid rgba(236, 101, 101, 0.575);
+        padding-bottom: 8px;
+        padding-left: 1rem;
+        color: rgb(223, 223, 126);
+        letter-spacing: 4px;
+        font-family: 'Signika Negative', sans-serif;
+    }
+    li{
+        list-style: none;
+        padding: 0.4rem;
+        margin-bottom: 10px;
+        a{
+            text-decoration: none;
+            text-transform: uppercase;
+            color: rgb(104, 189, 104);
+            margin-left: 1rem;  
+        }
+        a:hover{
+            color: rgb(93, 143, 207);
+        }
+        a.delete{
+            color: rgba(218, 77, 77, 0.918);
+        }
+        a.delete:hover{
+            color: red;
+        }
+    }
+}

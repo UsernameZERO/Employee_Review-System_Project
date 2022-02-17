@@ -1,0 +1,17 @@
+<header id="mainHeader">
+  <div class="Hname">
+    <% if(locals.user){%> <%if(user.usersPower === 'admin'){%>
+    <p class="h"><a href="/admin">Home</a></p>
+    <%}else{%>
+    <p class="h"><a href="/employee">Home</a></p>
+    <%}%>
+    <p>
+      <a href="/employee/profile/<%=user.id%>"><%= user.name%></a>
+      <a href="/employee/signout">Sign out</a>
+    </p>
+  </div>
+  <%}else{%>
+  <h1 id="Home">Employee Review System</h1>
+
+  <%}%>
+</header>

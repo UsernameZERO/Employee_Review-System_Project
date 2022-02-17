@@ -1,0 +1,11 @@
+<div class="listEmps">
+<h2>List of Employees</h2>
+<%for(u of profile_user){%>  <% if(u.usersPower ===
+'admin'){%>
+<li><a href="/employee/profile/<%=u.id%>"><%= u.name%>(ADMIN)</a></li>
+<% }else{%>
+<li><a href="/employee/profile/<%=u.id%>"><%= u.name%></a>
+  
+  <a class="delete" href="/employee/remove/<%=u.id%>">[delete]</a></li></li>
+<%}%> <%}%>
+</div>

@@ -1,0 +1,107 @@
+.Login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    .empLogin{
+        h1{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: salmon;
+        }
+        #Empform{
+            display: flex;
+            flex-direction: column;
+            label{
+                margin-left: 5px;
+                margin-top: 3px;
+                color: salmon;
+            }
+            #userN{
+                margin-top: 5px;
+                width: 15rem;
+                height: 2rem;
+                text-align: center;
+                border-radius: 1rem;
+                border: 2px solid black;
+            }
+            #pws{
+                margin-top: 5px;
+                width: 15rem;
+                height: 2rem;
+                text-align: center;
+                border-radius: 1rem;
+                border: 2px solid black;
+            }
+            #S-btn{
+                background-color: rgb(64, 128, 184);
+                color: aliceblue;
+                font-size: 1rem;
+                margin-top: 15px;
+                border-radius: 4px;
+                height: 1.8rem;
+                cursor: pointer;
+                border:  2px solid rgb(14, 1, 1);
+            }
+            
+        }
+        p{
+            font-weight: 500;
+            color: rgb(224, 154, 146);
+            a{
+                text-decoration: none;
+                color: rgb(241, 40, 40);
+            }
+            a:hover{
+                color: salmon;
+            }
+        }
+    }
+    .adminLogin{
+        h1{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: rgb(114, 250, 177);
+        }
+        #Admform{
+            display: flex;
+            flex-direction: column;
+            label{
+                color: rgb(114, 250, 177);
+                padding-left: 5px;
+            }
+
+            #userN{
+                margin-top: 5px;
+                width: 15rem;
+                height: 2rem;
+                text-align: center;
+                border-radius: 1rem;
+                border: 2px solid black;
+            }
+            #pws{
+                margin-top: 5px;
+                width: 15rem;
+                height: 2rem;
+                text-align: center;
+                border-radius: 1rem;
+                border: 2px solid black;
+            }
+            #L-btn{
+                background-color: rgb(64, 128, 184);
+                color: aliceblue;
+                font-size: 1rem;
+                margin-top: 15px;
+                border-radius: 4px;
+                height: 1.8rem;
+                cursor: pointer;
+                border:  2px solid rgb(14, 1, 1);
+            }
+
+        }
+        p{
+            color: rgb(135, 199, 165);
+            text-align: center;
+        }
+    }
+}

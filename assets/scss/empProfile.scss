@@ -1,0 +1,87 @@
+#profile{
+    margin-top: 20px;
+    height: 32vh;
+    width: 90vw;
+    text-align: end;
+    // border: 3px solid rgb(128, 0, 0);
+    // box-shadow: -2px 8px 9px rgb(102, 43, 41);
+
+    p{
+        padding-top: 1rem;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding-left: 3rem;
+        font-family: 'PT Mono', monospace;
+        color: rgb(103, 204, 187);
+    }
+    p#details{
+        color: salmon;
+        text-shadow: 4px 4px 17px rgb(236, 1, 1);
+        font-size: 1.5rem;
+        word-spacing: 4px;
+        letter-spacing: 4px;
+    }
+    h3{
+        font-weight: 500;
+        padding-left: 3rem;
+        font-family: 'PT Mono', monospace;
+        color: rgb(103, 204, 187);
+    }
+
+    margin-left: 1%;
+}
+
+#EditPerf{
+    margin-top: 10px;
+    color: rgb(201, 201, 248);
+    p{
+        text-align: center;
+        border: 3px solid rgb(185, 83, 117);
+        padding: 4px;
+        color: rgb(216, 216, 109);
+        font-size: 1.3rem;
+        letter-spacing: 3px;
+       
+    }
+    #updateemp{
+        box-shadow: -3px 1px 14px  rgb(20, 124, 124);
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 17.5rem;
+        margin-left: 39%;
+        padding-left: 1.3%;
+        label{
+            margin-top: 8px;
+            margin-bottom: 5px;
+            padding-left: 5px;
+        }
+        input{
+            border-radius: 10px;
+            border: 2px solid black;
+            padding: 0.5rem;
+            width: 16rem; 
+        }
+        select{
+            width: 16rem;
+            text-align: center;
+            border-radius: 4px;
+            padding: 0.3rem;
+            cursor: pointer;
+            margin: 2%;
+            background-color: azure;
+        }
+        #btn-updateemp{
+            margin-left: 30%;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            color: aqua;
+            background-color: black;
+            border: 2px solid salmon;
+            cursor: pointer;
+        }
+    }
+
+}

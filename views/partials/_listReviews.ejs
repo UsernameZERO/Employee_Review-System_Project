@@ -1,0 +1,43 @@
+<div class="feedbacksforperf">
+  <!-- <%if(profile_user.id == user.id || user.usersPower === 'admin'){%>
+  <form action="/feedback/create" method="post">
+    <textarea
+      name="feedback"
+      id="feed_back1"
+      cols="20"
+      rows="3"
+      required
+    ></textarea>
+    <input type="hidden" name="fdbkBYuser" value="<%=profile_user.id%>" />
+    <input type="hidden" name="userPerformance" value="<%= performance._id%>" />
+    <input type="submit" value="send" />
+  </form>
+  <%}%> -->
+
+  <div class="showfdbk">
+    <ul id="perfid<%= performance._id%>">
+      <% for(feed of performance.feedbacks){%>
+      <div id="fdbkrvw">
+        <%if(user.usersPower === 'admin'){%> <%for(u of profile_user){%>
+        <%if(u.id == feed.fdbkBYuser){%>
+        <p>
+          -- <%= u.name%> --
+          <small
+            ><a href="/feedback/destroy/<%= feed.id%>">[ Remove ]</a></small
+          >
+        </p>
+
+        <p id="reply">reply : <%= feed.feedback%></p>
+        <%}%> <%}%>
+      </div>
+      <%}else{%>
+      <p><%= profile_user.name%></p>
+      <p><%= feed.feedback%></p>
+      <small><p><%= feed.userPerformance.rvwBYuser%></p></small>
+      <p>check id <%=feed.userPerformance.rvwBYuser%></p>
+
+      <small><p><%= feed.userPerformance.rvwBYuser.name%></p></small>
+      <%}%> <%}%>
+    </ul>
+  </div>
+</div>

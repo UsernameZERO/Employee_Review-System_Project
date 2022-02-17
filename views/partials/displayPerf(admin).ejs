@@ -1,0 +1,22 @@
+<div class="rvw">
+  <ul>
+    <%for(performance of performances){%>
+    <div id="box-perfrvw">
+      <h1 id="h1">
+        <%for(u of profile_user){%> <%if(performance.rvwFor == u.id){%> <%=
+        u.name%> (performance)<%}%> <%}%>
+      </h1>
+      <small
+        ><a href="/performance/destroy/<%= performance.id%>">[Remove]</a></small
+      >
+      <li>Rating : <%= performance.review%>/5</li>
+      <li>Review : <%= performance.description%></li>
+
+      <small><p id="perfUSER">-- <%= performance.rvwBYuser.name%> --</p></small>
+      <!-- Display feedbacks -->
+      <small> <%- include('./_listReviews')%></small>
+    </div>
+
+    <%}%>
+  </ul>
+</div>

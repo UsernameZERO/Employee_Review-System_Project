@@ -1,0 +1,98 @@
+.feedbacksforperf{
+    #fdbkForm{
+        margin-top: 1rem;
+        padding-left: 6rem;
+       textarea{
+           border-radius: 15px;
+           padding: 0.6rem;
+           text-align: center;
+           height: 2.2rem;
+           width: 25rem;
+       }
+       #btn-reply{
+           border-radius: 5px;
+           border: 2px solid red;
+           height: 1.8rem;
+           width: 3rem;
+           cursor: pointer;
+       }
+    }
+
+    .showfdbk{
+        #editRevww{
+
+            margin-left: 15%;
+            border: 3px solid teal;
+            width: 15rem;
+            box-shadow: 1px 1px 14px rgb(20, 155, 27) ;
+            margin-bottom: 1rem;
+            padding-left: 3%;
+            p#prf{
+                color: rgb(31, 170, 31);
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                #remv{
+                    // margin-top: 2px;
+                    // margin-left: 3rem;
+                    // margin-bottom: 8px;
+                    a{
+                        color: salmon;
+                        
+                    }
+                }
+            }
+
+            #updatervws{
+                #feed_back1{
+                    border-radius: 5px;
+                    padding-left: 6px;
+                    text-align: center;
+                }
+                label{
+                    color: gold;
+                }
+                #btn-editrvw{
+                    border-radius: 5px;
+                    border: 2px solid green ;
+                    background-color: black;
+                    color: bisque;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    margin-left: 11rem;
+                }
+            }
+           
+        }
+
+
+
+        .showrvw{
+            margin-left: 15%;
+            border: 3px solid teal;
+            width: 15rem;
+            box-shadow: 1px 1px 14px rgb(20, 155, 27) ;
+            margin-bottom: 1rem;
+        }
+        p#feed{
+            margin-bottom: 0;
+            margin-top: 2%;
+            text-transform: capitalize;
+            border: none;
+    
+        }
+        #nothing{
+            border: none;
+        }
+        #rplyuser{
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 50%;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            text-transform: capitalize;
+            border: none;
+        }
+    }
+
+
+}

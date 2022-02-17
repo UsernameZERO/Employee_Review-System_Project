@@ -1,0 +1,35 @@
+#mainHeader{
+    height: 3rem;
+    background-color:#000000;
+    .Hname{
+        display: flex;
+        flex-direction: Row;
+        justify-content: space-between;
+        p{
+            margin-top: 1%;
+            font-size: 1.3rem;
+            font-family: 'Roboto Serif', sans-serif;
+            font-weight: 600;
+           a{
+               padding-right: 1.5rem;
+               text-decoration: none;
+               color: rgb(43, 43, 190);
+           }
+        }
+        .h{
+            padding-left: 8px;
+            
+        }
+
+        h1#Home{
+            font-size: 1.7rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-left: 38%;
+            font-weight: 600;
+            font-family: 'Vollkorn', serif;
+            color:rgb(43, 43, 190) ;
+            
+        }
+    }
+}

@@ -1,0 +1,57 @@
+<div id="profile">
+  <p id="details">Profile Details</p>
+  <p>Name : <%= profile_user.name%></p>
+  <h3>Mail ID : <%= profile_user.email %></h3>
+  <h3>Department : <%= profile_user.department %></h3>
+  <h3>Role : <%= profile_user.usersPower %></h3>
+</div>
+
+<div id="EditPerf">
+  <%if(user.usersPower === 'admin'){%>
+  <p>Update An Employee Details</p>
+  <form
+    id="updateemp"
+    action="/employee/update/<%=profile_user.id%>"
+    method="post"
+  >
+    <label for="Un">Employee Name</label>
+    <input
+      type="text"
+      name="name"
+      id="Un"
+      value="<%= profile_user.name%>"
+      required
+    />
+    <label for="userN">Employee Email</label>
+    <input
+      type="email"
+      name="email"
+      value="<%= profile_user.email%>"
+      id="userN"
+      required
+    />
+    <label for="usp">Your role</label>
+    <select name="usersPower" id="usp">
+      <% if(profile_user.usersPower === 'admin'){%>
+      <option value="admin">Admin</option>
+      <option value="employee">Employee</option>
+      <%}else{%>
+      <option value="employee">Employee</option>
+      <option value="admin">Admin</option>
+      <%}%>
+    </select>
+    <label for="">Department</label>
+    <select name="department" required>
+      <option value="HR">Human Resource</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Production">Production</option>
+      <option value="Marketing">Marketing</option>
+      <option value="<%= profile_user.department%>" selected>
+        <%= profile_user.department%>
+      </option>
+    </select>
+    <button id="btn-updateemp" type="submit">Update</button>
+  </form>
+</div>
+
+<%}%> <%- include('./partials/_performance')%>

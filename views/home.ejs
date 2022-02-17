@@ -1,0 +1,25 @@
+<div class="Login">
+  <div class="empLogin">
+    <h1>Employee Log In</h1>
+    <form id="Empform" action="/employee/create-session" method="post">
+      <label for="userN">Email</label>
+      <input type="email" name="email" id="userN" required />
+      <label for="pwd">Password</label>
+      <input type="password" name="password" id="pws" required />
+      <button type="submit" id="S-btn">Sign In</button>
+    </form>
+    <p><a href="/employee/signup">Sign Up</a> if you are not registerd</p>
+  </div>
+
+  <div class="adminLogin">
+    <h1>Admin Log In</h1>
+    <form id="Admform" action="/admin/create" method="post">
+      <label for="userN">Email</label>
+      <input type="email" name="email" id="userN" required />
+      <label for="pwd">Password</label>
+      <input type="password" name="password" id="pws" required />
+      <button id="L-btn" type="submit">Log In</button>
+    </form>
+    <p>Only For admin</p>
+  </div>
+</div>

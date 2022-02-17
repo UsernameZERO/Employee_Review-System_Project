@@ -1,0 +1,43 @@
+<div id="Addperf">
+  <div id="perf">
+    <%if(profile_user.id == locals.user.id){%>
+    <div id="perf-rvw">
+      <!-- <%= locals.user._id%> <%= locals.user.name%> -->
+      <h3>Reviews</h3>
+      <%- include('./_displayrvw')%>
+    </div>
+    <%}else{%>
+    <form id="perf_form" action="/performance/create" method="post">
+      <p>Give Your review for your colleague</p>
+      <label for="review_No">Review (?/5)</label>
+      <input
+        type="number"
+        id="review_No"
+        name="review"
+        value="3"
+        min="1"
+        max="5"
+        required
+      />
+      <label for="feed_back">What is the review for ? </label>
+      <textarea
+        name="description"
+        id="feed_back"
+        cols="30"
+        rows="3"
+        placeholder="Write, Why The Review For ?"
+        required
+      ></textarea>
+      <input type="hidden" name="rvwBYuser" value="<%= user._id %>" />
+      <input type="hidden" name="rvwfor" value="<%= profile_user.id%>" />
+      <button id="btn-perf" type="submit">ADD</button>
+    </form>
+
+    <div id="perf-rvw">
+      <!-- <%= locals.user._id%> <%= locals.user.name%> -->
+      <h3>Reviews</h3>
+      <%- include('./_displayrvw')%>
+    </div>
+    <%}%>
+  </div>
+</div>

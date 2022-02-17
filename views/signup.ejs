@@ -1,0 +1,27 @@
+<div id="sign-up">
+  <form id="Empsignup" action="/employee/create" method="post">
+    <p>TO REGISTER FILL IN THE DETAILS</p>
+    <label for="userN">Employee Email</label>
+    <input type="email" name="email" id="userN" required />
+    <label for="Un">Employee Name</label>
+    <input type="text" name="name" id="Un" required />
+    <label for="usp">Role</label>
+    <select name="usersPower" id="usp">
+      <option value="admin" disabled>Admin</option>
+      <option value="employee" selected>Employee</option>
+    </select>
+    <label for="">Department</label>
+    <select name="department" required>
+      <option value="HR">Human Resource</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Production" selected>Production</option>
+      <option value="Marketing">Marketing</option>
+    </select>
+    <label for="pwd">Password</label>
+    <input type="password" name="password" id="pws" required />
+    <label for="cpwd">Confirm Password</label>
+    <input type="password" name="c_password" id="cpws" required />
+
+    <button id="btn-signup" type="submit">sign up</button>
+  </form>
+</div>
