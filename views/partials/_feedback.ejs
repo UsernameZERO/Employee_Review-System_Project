@@ -17,9 +17,9 @@
 
   <div class="showfdbk">
     <ul id="perfid<%= performance._id%>">
-      <% for(feed of performance.feedbacks){%>
+      <% for(feed of performance.feedbacks){%> <%if(user.usersPower ===
+      'admin'){%>
       <div id="editRevww">
-        <%if(user.usersPower === 'admin'){%>
         <p id="prf">
           <%=profile_user.name%>
           <span id="remv"
