@@ -55,7 +55,7 @@ Go to the project directory
 Install Dependencies
 
 ```bash
-npm install
+npm install --save
 ```
 
 - Make sure to start Mongodb, as it differ from system to system
