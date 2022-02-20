@@ -12,13 +12,15 @@ const MongoStore = require('connect-mongo')(session); //and it is used cookie st
 const sassMiddleware = require('node-sass-middleware');
 const path = require('path');
 
-app.use(sassMiddleware({
-    src: path.join(__dirname, environment.asset_path, '/scss'),
-    dest: path.join(__dirname, environment.asset_path, '/css'),
-    debug: true,// it is false in production mode
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+if(environment.name == 'development'){
+    app.use(sassMiddleware({
+        src: path.join(__dirname, environment.asset_path, '/scss'),
+        dest: path.join(__dirname, environment.asset_path, '/css'),
+        debug: true,// it is false in production mode
+        outputStyle: 'extended',
+        prefix: '/css'
+    }));
+}
 app.use(express.urlencoded());
 app.use(cookieParser());
 
