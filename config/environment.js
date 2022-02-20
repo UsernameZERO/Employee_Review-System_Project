@@ -8,7 +8,10 @@ const development = {
 }
 
 const production = {
-    name : 'production'
+    name : 'production',
+    asset_path: process.env.EMP_SYS_ASSET_PATH ,
+    session_cookie_key: process.env.EMP_SYS_SESSION_COOKIE_KEY,
+    db: process.env.EMP_SYS_DB,
 }
 
-module.exports = development;
+module.exports = eval(process.env.ENVIRONMENT) == undefined ? development : eval(process.env.ENVIRONMENT);
