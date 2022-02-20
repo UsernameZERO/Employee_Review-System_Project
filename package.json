@@ -25,5 +25,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vamsi krishna",
-  "license": "MIT"
+  "license": "ISC",
+  "engines": {
+    "node": "14.18.3"
+  }
 }
