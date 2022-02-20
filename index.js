@@ -1,4 +1,5 @@
 const express = require('express');
+const environment = require('./config/environment');
 const cookieParser = require('cookie-parser');
 const app = express();
 const port = 7777;
@@ -9,10 +10,11 @@ const passport = require('passport');// for authentication
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session); //and it is used cookie stored in db // used connect-mongo@3 version 
 const sassMiddleware = require('node-sass-middleware');
+const path = require('path');
 
 app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
+    src: path.join(__dirname, environment.asset_path, '/scss'),
+    dest: path.join(__dirname, environment.asset_path, '/css'),
     debug: true,// it is false in production mode
     outputStyle: 'extended',
     prefix: '/css'
@@ -20,7 +22,7 @@ app.use(sassMiddleware({
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use(express.static('./assets'));
+app.use(express.static(environment.asset_path));
 app.use(expressLayouts);//To use the layout after installation
 //For extracting the multiple styles and scripts to to layout
 app.set('layout extractStyles', true);
@@ -37,7 +39,7 @@ app.set('views', './views');//ejs is set to folder of where we use
 app.use(session({
     name: 'employee-review-sys',
     //TODO change the secret before deployment in production mode
-    secret: 'lolololol',
+    secret: environment.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie:{
