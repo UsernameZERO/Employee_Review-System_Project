@@ -1,26 +1,34 @@
 {
   "name": "employee_review-system",
-  
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.6",
+    "del": "^6.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.2",
     "gh-pages": "^3.2.3",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-rev": "^9.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify-es": "^3.0.0",
     "mongoose": "^6.1.9",
+    "morgan": "^1.10.0",
     "node-sass-middleware": "^0.11.0",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "rotating-file-stream": "^3.0.2",
+    "sass": "^1.49.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
   "scripts": {
-    
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod_start": "NODE_ENV=production nodemon index.js"

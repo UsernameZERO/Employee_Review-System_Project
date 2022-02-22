@@ -1,7 +1,9 @@
 const express = require('express');
 const environment = require('./config/environment');
+const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const app = express();
+require('./config/view-helpers')(app);
 const port = 7777;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -25,6 +27,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(express.static(environment.asset_path));
+app.use(logger(environment.morgan.mode, environment.morgan.options));
 app.use(expressLayouts);//To use the layout after installation
 //For extracting the multiple styles and scripts to to layout
 app.set('layout extractStyles', true);
