@@ -33,7 +33,7 @@ app.set('views', './views');//ejs is set to folder of where we use
 app.use(session({
     name: 'employee-review-sys',
     //TODO change the secret before deployment in production mode
-    secret: 'lololololol',
+    secret: 'LOLOLOL',
     saveUninitialized: false,
     resave: false,
     cookie:{

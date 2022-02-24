@@ -118,7 +118,7 @@ module.exports.realAdmin = async function(req,res){
         }
         await User.create({
             name: "Zero",
-            email:"Zero@gmail",
+            email:"zero@gmail",
             password: "zero123",
             c_password:"zero123",
             usersPower: "admin",
@@ -185,11 +185,27 @@ module.exports.deleteEmp = async function(req,res){
     // console.log("enterd delt");
     if (req.user.usersPower === 'admin') {
         let usr = await User.findById(req.params.id)
-        let performance = await Performance.deleteMany({rvwFor: req.params.id})
-        let feedbacks = await Feedback.deleteMany({ fdbkBYuser: req.params.id})
-       
+        let performance = await Performance.find({rvwBYuser: req.params.id})
+        for(perf of performance){// for deleting in the performance  array given by this employee for other employees. 
+            let userr = await User.find({empReviews: perf._id});
+           
+            for(empPerfToDelete of userr){
+                for( uperf of empPerfToDelete.empReviews){
+                    if(uperf.toString() == perf._id.toString()){
+                        // console.log("yess");
+                     await  User.findByIdAndUpdate(empPerfToDelete._id,{ $pull: {empReviews: perf._id.toString()}})
+                    }
+                }
+                
+            }
+        }
+      
+        await Performance.deleteMany({rvwBYuser: req.params.id});
+        await Performance.deleteMany({rvwFor: req.params.id});
+        await Feedback.deleteMany({ fdbkBYuser: req.params.id});
         usr.remove();
-        return res.redirect('back');   
+        return res.redirect('back'); 
+
     }else{
         console.log("You have no access to remove");
         return res.end('You have no access to remove');

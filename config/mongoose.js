@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 //Connecting mongoose to mongodb
-mongoose.connect(`mongodb://localhost/employee_review-sys1`);
+mongoose.connect(`mongodb://localhost/employee_review-systemPRz`);
 
 const db = mongoose.connection;// storing the data from mongoDB to initialized variable
 

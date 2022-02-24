@@ -50,9 +50,9 @@ passport.setAuthenticatedUser = function(req, res, next){
 passport.checkAdminAuthentication = function(req, res, next){
     // console.log("CAA2",res.locals.user);
     if (req.isAuthenticated() && res.locals.user.usersPower === 'admin') {
-        next();
+       return next();
     }else{
-    console.log("You are not an admin");
+    // console.log("You are not an admin");
     // return res.redirect('/');
     return res.end("----- Your not an ADMIN -------");
     }
@@ -62,7 +62,7 @@ passport.checkAuthentication = function(req, res, next){
     // if user is signed in ,then pass on next request
     // console.log("cA", res.locals.user);
     if (req.isAuthenticated()) {
-        console.log("checkAuthentication ",req.body,res.locals.user);
+        // console.log("checkAuthentication ",req.body,res.locals.user);
         return next();
     }
     console.log("you are not an employee");

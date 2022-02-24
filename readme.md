@@ -86,3 +86,10 @@ EMPLOYEE_REVIEW_SYSTEM
 ├── package.json
 └── readme.md
 ```
+
+## Working
+
+- You should not register an employee without going into the below route.
+- First go to get the admin credentials for that
+- (Admin- id and password) go to http://localhost:7777/admin/credentials this route for admin credentials.
+- From here on you can register from home page for employees or you can register in admin page.
