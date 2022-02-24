@@ -1,9 +1,6 @@
 const express = require('express');
-const environment = require('./config/environment');
-const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const app = express();
-require('./config/view-helpers')(app);
 const port = 7777;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -12,30 +9,22 @@ const passport = require('passport');// for authentication
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session); //and it is used cookie stored in db // used connect-mongo@3 version 
 const sassMiddleware = require('node-sass-middleware');
-const path = require('path');
 
-if(environment.name == 'development'){
     app.use(sassMiddleware({
-        src: path.join(__dirname, environment.asset_path, '/scss'),
-        dest: path.join(__dirname, environment.asset_path, '/css'),
+        src: './assets/scss',
+        dest: './assets/css',
         debug: true,// it is false in production mode
         outputStyle: 'extended',
         prefix: '/css'
     }));
-}
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use(express.static(environment.asset_path));
-app.use(logger(environment.morgan.mode, environment.morgan.options));
+app.use(express.static('./assets'));
 app.use(expressLayouts);//To use the layout after installation
 //For extracting the multiple styles and scripts to to layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
-
-
-
-
 
 app.set('view engine', 'ejs');//ejs is set after installation
 app.set('views', './views');//ejs is set to folder of where we use
@@ -44,7 +33,7 @@ app.set('views', './views');//ejs is set to folder of where we use
 app.use(session({
     name: 'employee-review-sys',
     //TODO change the secret before deployment in production mode
-    secret: environment.session_cookie_key,
+    secret: 'lololololol',
     saveUninitialized: false,
     resave: false,
     cookie:{
