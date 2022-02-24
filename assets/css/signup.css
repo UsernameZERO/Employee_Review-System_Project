@@ -9,9 +9,10 @@
     #sign-up #Empsignup p {
       font-size: 0.8rem;
       font-weight: 700;
-      color: #552a08; }
+      color: #c36822; }
     #sign-up #Empsignup label {
-      margin-left: 6px; }
+      margin-left: 6px;
+      color: aqua; }
     #sign-up #Empsignup input {
       width: 15rem;
       height: 1.8rem;
